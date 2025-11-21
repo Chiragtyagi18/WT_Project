@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Profile - ShopEasy</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+<h1>ShopEasy</h1>
+<nav>
+<a href="/">Home</a>
+<a href="/cart.html">Cart</a>
+<a href="/signup.html">Signup</a>
+</nav>
+</header>
+
+
+<main class="container">
+<h2>Your Orders</h2>
+<p>Enter your email to view orders placed with that email.</p>
+<form id="profile-form">
+<input name="email" type="email" placeholder="Email" required />
+<button type="submit">View Orders</button>
+</form>
+
+
+<div id="orders"></div>
+</main>
+
+
+<script src="/js/profile.js"></script>
+</body>
+</html>

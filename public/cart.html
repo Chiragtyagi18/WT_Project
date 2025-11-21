@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Cart - ShopEasy</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+<h1>ShopEasy</h1>
+<nav>
+<a href="/">Home</a>
+<a href="/cart.html">Cart</a>
+<a href="/profile.html">Profile</a>
+<a href="/about.html">About</a>
+</nav>
+</header>
+
+
+<main class="container">
+<h2>Your Cart</h2>
+<div id="cart-items"></div>
+
+
+<h3>Checkout (COD)</h3>
+<form id="checkout-form">
+<input name="name" placeholder="Full name" required />
+<input name="email" type="email" placeholder="Email" required />
+<input name="phone" placeholder="Phone" required />
+<textarea name="address" placeholder="Address" required></textarea>
+<button type="submit">Place Order - Cash on Delivery</button>
+</form>
+
+
+<div id="msg"></div>
+</main>
+
+
+<script src="/js/cart.js"></script>
+</body>
+</html>

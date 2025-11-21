@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Signup - ShopEasy</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+<h1>ShopEasy</h1>
+<nav>
+<a href="/">Home</a>
+<a href="/cart.html">Cart</a>
+<a href="/profile.html">Profile</a>
+</nav>
+</header>
+
+
+<main class="container">
+<h2>Signup</h2>
+<form id="signup-form">
+<input name="name" placeholder="Full name" required />
+<input name="email" type="email" placeholder="Email" required />
+<input name="password" type="password" placeholder="Password" required />
+<input name="phone" placeholder="Phone" />
+<textarea name="address" placeholder="Address"></textarea>
+<button type="submit">Signup</button>
+</form>
+<div id="smsg"></div>
+</main>
+
+
+<script>
+document.getElementById('signup-form').addEventListener('submit', async (e) => {
+e.preventDefault();
+const f = Object.fromEntries(new FormData(e.target));
+const res = await fetch('/api/auth', { method: 'POST', headers: { 'Content-Type':'application/json' }, body: JSON.stringify({ ...f, type: 'signup' }) });
+const j = await res.json();
+if (j.success) {
+document.getElementById('smsg').innerText = 'Signup successful! You can now place orders with this email.';
+e.target.reset();
+} else {
+document.getElementById('smsg').innerText = j.error || 'Error';
+}
+});
+</script>
+</body>
+</html>
